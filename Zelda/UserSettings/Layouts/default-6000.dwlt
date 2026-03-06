@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1706.6666
     height: 869.7778
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 1041.7778
     height: 527.55554
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 226}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -221,8 +221,8 @@ MonoBehaviour:
     y: 0
     width: 274.66663
     height: 527.55554
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -275,8 +275,8 @@ MonoBehaviour:
     y: 0
     width: 390.22217
     height: 813.7778
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 76}
+  m_MaxSize: {x: 4001, y: 4026}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -646,7 +646,7 @@ MonoBehaviour:
       height: 480.55554
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 2507.75, y: 1128.5}
+  m_LastWindowPixelSize: {x: 1114.5555, y: 501.55554}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1290,9 +1290,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0.289379, y: -1.0632099, z: 0.45486912}
+    m_Target: {x: -5.6244273, y: -6.0015483, z: 9.825514}
     speed: 2
-    m_Value: {x: 0.289379, y: -1.0632099, z: 0.45486912}
+    m_Value: {x: -5.6244273, y: -6.0015483, z: 9.825514}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1342,9 +1342,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
-    m_Target: 12.90997
+    m_Target: 5.8280563
     speed: 2
-    m_Value: 12.90997
+    m_Value: 6.102677
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1513,11 +1513,13 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: -19416
+      - m_Data: -59070
       m_LastClickedID:
-        m_Data: 0
+        m_Data: -59070
       m_ExpandedIDs:
-      - m_Data: -1294
+      - m_Data: -59810
+      - m_Data: -59030
+      - m_Data: -57816
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1592,7 +1594,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/FX
+    - Assets
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1602,7 +1604,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/FX
+  - Assets
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\FacInpro\2026_1\Unity3D\Projetos\Zelda
   m_LockTracker:
@@ -1611,17 +1613,12 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 52774
+    - m_Data: 71084
     m_LastClickedID:
-      m_Data: 52774
+      m_Data: 71084
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 46194
-    - m_Data: 46196
-    - m_Data: 46198
-    - m_Data: 46200
-    - m_Data: 47058
-    - m_Data: 52712
+    - m_Data: 71084
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1653,12 +1650,7 @@ MonoBehaviour:
     m_SelectedIDs: []
     m_LastClickedID:
       m_Data: 0
-    m_ExpandedIDs:
-    - m_Data: 0
-    - m_Data: 46194
-    - m_Data: 46196
-    - m_Data: 46198
-    - m_Data: 46200
+    m_ExpandedIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1686,9 +1678,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -19416
-    m_LastClickedInstanceID: -19416
-    m_HadKeyboardFocusLastEvent: 1
+    - m_Data: -59070
+    m_LastClickedInstanceID: -59070
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1797,7 +1789,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -19416
+  m_LastSelectedObjectID: 0
 --- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
