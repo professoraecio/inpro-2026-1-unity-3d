@@ -59,6 +59,14 @@ public class Player : MonoBehaviour
         // Aplicar movimento independente
         // se veio do joystick ou teclado
         direcao = new Vector3(dirX,0,dirY).normalized;
+        // se a velocidade do player não e nula
+        if(direcao.magnitude > 0.1f)
+        {
+            // A partir do ângulo direcionar o seu norte
+            // Converti radianos para graus
+            float tangetAngle = Mathf.Atan2(direcao.x,direcao.z ) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0,tangetAngle,0);
+        }
         controller.Move(direcao * velocidade * Time.deltaTime);
 
     }
