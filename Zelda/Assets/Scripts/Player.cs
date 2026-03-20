@@ -12,9 +12,14 @@ public class Player : MonoBehaviour
     private Vector3 direcao;
 
     private CharacterController controller;
+
+    Animator animator;
+    bool isWalk = false;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -66,8 +71,13 @@ public class Player : MonoBehaviour
             // Converti radianos para graus
             float tangetAngle = Mathf.Atan2(direcao.x,direcao.z ) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0,tangetAngle,0);
+            isWalk = true;
+        }
+        else
+        {
+            isWalk = false;
         }
         controller.Move(direcao * velocidade * Time.deltaTime);
-
+        animator.SetBool("isWalk",isWalk);
     }
 }
