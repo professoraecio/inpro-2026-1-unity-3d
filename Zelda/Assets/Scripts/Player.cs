@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     Animator animator;
     bool isWalk = false;
+    public bool ataque = false;
 
     void Start()
     {
@@ -25,6 +26,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        // Ataque via teclado
+        if(Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
+        {
+            ataque = true;
+        }              
+
         float dirX = 0f;
         float dirY = 0f;
 
@@ -79,5 +87,25 @@ public class Player : MonoBehaviour
         }
         controller.Move(direcao * velocidade * Time.deltaTime);
         animator.SetBool("isWalk",isWalk);
+
+        // Ataque via joystick
+        if(gp != null)
+        {
+            bool a = gp.buttonSouth.isPressed ? true : false;
+            bool b = gp.buttonEast.isPressed ? true : false;
+            bool x = gp.buttonWest.isPressed ? true : false;
+            bool y = gp.buttonNorth.isPressed ? true : false;
+            if(a || b || x || y)
+                ataque = true;
+        }
+
+        // Ativar ou não a animação de ataque
+        if(ataque)
+        {
+            animator.SetTrigger("Attack");
+            print("Rodar animação de ataque...");
+        }
+            
+        ataque = false;
     }
 }
