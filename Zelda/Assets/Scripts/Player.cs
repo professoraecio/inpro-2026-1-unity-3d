@@ -1,4 +1,5 @@
 using System;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
@@ -7,7 +8,8 @@ public class Player : MonoBehaviour
     [Header("Movimento")]
     public float velocidade = 6f;
     [Header("Joystick")]
-    [Range(0f,0.5f)] public float deadzone = 0.15f;
+    //[Range(0f,0.5f)] 
+    public float deadzone = 0.15f;
     public bool usarDpadComoDigital = true;
     private Vector3 direcao;
 
@@ -20,6 +22,14 @@ public class Player : MonoBehaviour
     [Header("Cameras")]
     public GameObject camA;
     public GameObject camB;
+
+    [Header("Attack Config")]
+    [SerializeField]
+    public bool isAttack;
+    public Transform hitBox;
+    public float hitRange = 1f;
+    public Collider[] hitInfo;
+    public LayerMask hitMask;
 
     void Start()
     {
@@ -35,7 +45,7 @@ public class Player : MonoBehaviour
         if(Keyboard.current != null && Keyboard.current.spaceKey.isPressed)
         {
             ataque = true;
-        }              
+        }      
 
         float dirX = 0f;
         float dirY = 0f;
@@ -106,11 +116,23 @@ public class Player : MonoBehaviour
         // Ativar ou não a animação de ataque
         if(ataque)
         {
+            isAttack = true;
             animator.SetTrigger("Attack");
+            // capturando objetos que estão na minha área de ataque
+            hitInfo = Physics.OverlapSphere(hitBox.position,hitRange,hitMask);
             print("Rodar animação de ataque...");
+            foreach(Collider c in hitInfo)
+            {
+                c.gameObject.SendMessage("GetHit",1,SendMessageOptions.DontRequireReceiver);   
+            }
         }
             
         ataque = false;
+    }
+
+    void AttackIsDone()
+    {
+        isAttack = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -133,5 +155,11 @@ public class Player : MonoBehaviour
                 camB.SetActive(false);
                 break;
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(hitBox.position,hitRange);
     }
 }
