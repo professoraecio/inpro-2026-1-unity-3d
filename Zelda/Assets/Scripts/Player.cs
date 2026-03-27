@@ -17,6 +17,10 @@ public class Player : MonoBehaviour
     bool isWalk = false;
     public bool ataque = false;
 
+    [Header("Cameras")]
+    public GameObject camA;
+    public GameObject camB;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -107,5 +111,27 @@ public class Player : MonoBehaviour
         }
             
         ataque = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "CamTrigger":
+                camA.SetActive(false);
+                camB.SetActive(true);
+                break;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "CamTrigger":
+                camA.SetActive(true);
+                camB.SetActive(false);
+                break;
+        }
     }
 }
