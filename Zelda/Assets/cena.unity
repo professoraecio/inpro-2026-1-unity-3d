@@ -925,6 +925,19 @@ CapsuleCollider:
   m_Height: 1.5
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1770428094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770428088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c8276a928908f4abc1f7604e508284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeIA
+  HP: 3
 --- !u!1 &1800759029
 GameObject:
   m_ObjectHideFlags: 0
@@ -3225,11 +3238,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2563320064970146424, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.27
+      value: -4.427
       objectReference: {fileID: 0}
     - target: {fileID: 2563320064970146424, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.54
+      value: 10.28
       objectReference: {fileID: 0}
     - target: {fileID: 2563320064970146424, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3302,6 +3315,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7440993060922297609, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1770428091}
+    - targetCorrespondingSourceObject: {fileID: 7440993060922297609, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1770428094}
   m_SourcePrefab: {fileID: 100100000, guid: ff4e69312dfc11744ac6dc33f9937962, type: 3}
 --- !u!4 &6161094322675295601
 Transform:
