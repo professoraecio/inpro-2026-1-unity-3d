@@ -8,7 +8,8 @@ public enum enemyState
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [Header("Slime IA")]
+    public Transform[] slimeWayPoints;
     void Start()
     {
         

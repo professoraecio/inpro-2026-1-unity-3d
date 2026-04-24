@@ -1,7 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.AI;
 public class SlimeIA : MonoBehaviour
 {
+
+    private GameManager _gm;
+    private NavMeshAgent agent;
+    private Vector3 destination;
+    private int idWayPoint;
+
     private Animator anim;
     public int HP = 3;
     private bool isDie = false;
@@ -12,7 +19,10 @@ public class SlimeIA : MonoBehaviour
     private int rand;
     void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
+        destination = transform.position;
         anim = GetComponent<Animator>();
+        _gm = FindFirstObjectByType(typeof(GameManager)) as GameManager;
         ChangeState(state);
     }
 
@@ -67,6 +77,8 @@ public class SlimeIA : MonoBehaviour
         switch(newState)
         {
             case enemyState.IDLE:
+                destination = transform.position;
+                agent.destination = destination;
                 StartCoroutine("IDLE");
             break;
             case enemyState.ALERT:
@@ -74,6 +86,9 @@ public class SlimeIA : MonoBehaviour
                 StartCoroutine("ALERT");
             break;
             case enemyState.PATROL:
+                idWayPoint = Random.Range(0,_gm.slimeWayPoints.Length);
+                destination = _gm.slimeWayPoints[idWayPoint].position;
+                agent.destination = destination;
                 StartCoroutine("PATROL");
             break;
             case enemyState.FOLLOW:
@@ -105,6 +120,11 @@ public class SlimeIA : MonoBehaviour
     {
         yield return new WaitForSeconds(idleWaitTime);
         StayStill(50);
+    }
+    IEnumerator PATROL()
+    {
+        yield return new WaitForSeconds(patrolWaitTime);
+        StayStill(30);
     }
     #endregion
 }
