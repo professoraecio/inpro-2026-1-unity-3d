@@ -22,4 +22,19 @@ public class SlimeIA : MonoBehaviour
         yield return new WaitForSeconds(3f);
         Destroy(this.gameObject);
     }
+
+    #region 
+    void GetHit(int amount)
+    {
+        if(isDie){return;}
+        HP -= amount;
+        if(HP > 0)
+            anim.SetTrigger("GetHit");
+        else
+        {
+            anim.SetTrigger("Die");
+            StartCoroutine("Died");
+        }
+    }
+    #endregion
 }
