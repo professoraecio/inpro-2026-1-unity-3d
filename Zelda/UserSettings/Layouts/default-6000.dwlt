@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 990
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 1103.5
     height: 553.5
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 226}
+  m_MaxSize: {x: 4002, y: 4026}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -686,7 +686,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Samples/AI Navigation/2.0.10
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Samples/AI Navigation/2.0.10
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\FacInpro\2026_1\Unity3D\Projetos\Zelda
   m_LockTracker:
@@ -705,12 +705,14 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 48862
+    - m_Data: 50146
     m_LastClickedID:
-      m_Data: 48862
+      m_Data: 50146
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 48534
+    - m_Data: 50110
+    - m_Data: 50132
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -772,8 +774,8 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 35914
-    m_LastClickedInstanceID: 35914
+    - m_Data: 48112
+    m_LastClickedInstanceID: 48112
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
@@ -898,11 +900,12 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 35914
+      - m_Data: 48112
       m_LastClickedID:
-        m_Data: 0
+        m_Data: 48112
       m_ExpandedIDs:
       - m_Data: -1338
+      - m_Data: 48112
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -920,7 +923,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 4}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1565,9 +1568,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 18.99029, y: -17.723343, z: 7.674913}
+    m_Target: {x: 14.138066, y: -24.367323, z: 11.189715}
     speed: 2
-    m_Value: {x: 18.99029, y: -17.723343, z: 7.674913}
+    m_Value: {x: 14.138066, y: -24.367323, z: 11.189715}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1613,13 +1616,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.22389223, y: -0.6934988, z: 0.24244054, w: -0.64044046}
+    m_Target: {x: -0.28527385, y: -0.65837073, z: 0.29841244, w: -0.62938565}
     speed: 2
-    m_Value: {x: -0.22389114, y: -0.6934954, z: 0.24243934, w: -0.6404373}
+    m_Value: {x: -0.28527248, y: -0.6583676, z: 0.298411, w: -0.62938267}
   m_Size:
-    m_Target: 18.72325
+    m_Target: 18.647495
     speed: 2
-    m_Value: 18.72325
+    m_Value: 18.647495
   m_Ortho:
     m_Target: 0
     speed: 2
