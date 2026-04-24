@@ -7,9 +7,13 @@ public class SlimeIA : MonoBehaviour
     private bool isDie = false;
     public enemyState state;
     private bool isAlert = false;
+    public const float idleWaitTime = 2f;
+    public const float patrolWaitTime = 4f;
+    private int rand;
     void Start()
     {
         anim = GetComponent<Animator>();
+        ChangeState(state);
     }
 
     // Update is called once per frame
@@ -80,6 +84,27 @@ public class SlimeIA : MonoBehaviour
                 
             break;
         }
+    }
+    int Rand()
+    {
+        rand = Random.Range(0,100);
+        return rand;
+    }
+    void StayStill(int yes)
+    {
+        if(Rand() <= yes)
+        {
+            ChangeState(enemyState.IDLE);
+        }
+        else
+        {
+            ChangeState(enemyState.PATROL);
+        }
+    }
+    IEnumerator IDLE()
+    {
+        yield return new WaitForSeconds(idleWaitTime);
+        StayStill(50);
     }
     #endregion
 }
