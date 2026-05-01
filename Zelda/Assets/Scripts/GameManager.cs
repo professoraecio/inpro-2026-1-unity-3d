@@ -8,8 +8,10 @@ public enum enemyState
 
 public class GameManager : MonoBehaviour
 {
+    public Transform player;
     [Header("Slime IA")]
     public Transform[] slimeWayPoints;
+    public float slimeDistanceToAttack = 2.3f;
     void Start()
     {
         

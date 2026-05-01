@@ -8,6 +8,7 @@ public class SlimeIA : MonoBehaviour
     private NavMeshAgent agent;
     private Vector3 destination;
     private int idWayPoint;
+    private bool isWalk;
 
     private Animator anim;
     public int HP = 3;
@@ -15,7 +16,7 @@ public class SlimeIA : MonoBehaviour
     public enemyState state;
     private bool isAlert = false;
     public const float idleWaitTime = 2f;
-    public const float patrolWaitTime = 4f;
+    //public const float patrolWaitTime = 4f;
     private int rand;
     void Start()
     {
@@ -30,6 +31,11 @@ public class SlimeIA : MonoBehaviour
     void Update()
     {
         StateManager();
+        if(agent.desiredVelocity.magnitude >= 0.1f)
+            isWalk = true;
+        else
+            isWalk = false;
+        anim.SetBool("isWalk",isWalk);
     }
 
     IEnumerator Died()
@@ -45,7 +51,10 @@ public class SlimeIA : MonoBehaviour
         if(isDie){return;}
         HP -= amount;
         if(HP > 0)
+        {
+            ChangeState(enemyState.FURY);
             anim.SetTrigger("GetHit");
+        }
         else
         {
             anim.SetTrigger("Die");
@@ -57,16 +66,23 @@ public class SlimeIA : MonoBehaviour
         switch(state)
         {
             case enemyState.IDLE:
+                agent.stoppingDistance = 0;
+                destination = transform.position;
+                agent.destination = destination;
+                StartCoroutine("IDLE");
             break;
             case enemyState.ALERT:
             break;
             case enemyState.EXPLORE:
             break;
             case enemyState.PATROL:
+                agent.stoppingDistance = 0;
             break;
             case enemyState.FOLLOW:
             break;
             case enemyState.FURY:
+                destination = _gm.player.position;
+                agent.destination = destination;
             break;
         }
     }
@@ -96,7 +112,9 @@ public class SlimeIA : MonoBehaviour
                 StartCoroutine("ATTACK");
             break;
             case enemyState.FURY:
-                
+                destination = transform.position;
+                agent.stoppingDistance = _gm.slimeDistanceToAttack;
+                agent.destination = destination;
             break;
         }
     }
@@ -123,7 +141,7 @@ public class SlimeIA : MonoBehaviour
     }
     IEnumerator PATROL()
     {
-        yield return new WaitForSeconds(patrolWaitTime);
+        yield return new WaitUntil(() => agent.remainingDistance <= 0);
         StayStill(30);
     }
     #endregion

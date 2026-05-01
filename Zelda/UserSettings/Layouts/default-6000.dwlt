@@ -322,15 +322,16 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 4968562472186251999, guid: 4a76a40a34c40f544ba3e8190a0286c6, type: 2}
     - {fileID: -1314252863904631300, guid: 4a76a40a34c40f544ba3e8190a0286c6, type: 2}
+    - {fileID: 1107040346203751106, guid: 9bbcf96c9a254c5ba654027c656d7b39, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1.15
+    - e00: 1
       e01: 0
       e02: 0
-      e03: 94.75002
+      e03: -42.5
       e10: 0
-      e11: 1.15
+      e11: 1
       e12: 0
-      e13: 10.475007
+      e13: 113
       e20: 0
       e21: 0
       e22: 1
@@ -355,10 +356,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 0.82761735
+      e01: 0
+      e02: 0
+      e03: -89.07671
+      e10: 0
+      e11: 0.82761735
+      e12: 0
+      e13: 12.5686035
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 4a76a40a34c40f544ba3e8190a0286c6, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 9bbcf96c9a254c5ba654027c656d7b39, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -1314252863904631300, guid: 4a76a40a34c40f544ba3e8190a0286c6, type: 2}
+  - m_Target: {fileID: 1107040346203751106, guid: 9bbcf96c9a254c5ba654027c656d7b39, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -370,7 +387,7 @@ MonoBehaviour:
     m_IsLocked: 0
   m_CurrentEditor: 0
   m_LayerEditor:
-    m_SelectedLayerIndex: 1
+    m_SelectedLayerIndex: 0
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -705,13 +722,13 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 49046
+    - m_Data: 49092
     m_LastClickedID:
-      m_Data: 49046
+      m_Data: 49092
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48714
-    - m_Data: 49054
+    - m_Data: 48758
+    - m_Data: 48760
     - m_Data: 1000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -745,7 +762,8 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 48714
+    - m_Data: 48758
+    - m_Data: 48760
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -773,14 +791,14 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: 35968
-    m_LastClickedInstanceID: 35968
+    - m_Data: 48084
+    m_LastClickedInstanceID: 48084
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: []
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: SlimeIA
-      m_OriginalName: SlimeIA
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -788,10 +806,10 @@ MonoBehaviour:
         width: 0
         height: 0
       m_UserData:
-        m_Data: 35968
+        m_Data: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 5}
@@ -899,14 +917,12 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs:
-      - m_Data: 35968
+      - m_Data: 48084
       m_LastClickedID:
-        m_Data: 0
+        m_Data: 48084
       m_ExpandedIDs:
-      - m_Data: -2586
       - m_Data: -1338
-      - m_Data: 48064
-      - m_Data: 48090
+      - m_Data: 48134
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

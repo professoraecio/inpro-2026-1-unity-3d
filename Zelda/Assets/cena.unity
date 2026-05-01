@@ -1237,12 +1237,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67fc5ef4cf5745429426e3d9a9a7fa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  player: {fileID: 2231975442454410785}
   slimeWayPoints:
   - {fileID: 1282117840}
   - {fileID: 1365871266}
   - {fileID: 634747262}
   - {fileID: 1789958166}
   - {fileID: 2076696170}
+  slimeDistanceToAttack: 2.3
 --- !u!1 &1381382347
 GameObject:
   m_ObjectHideFlags: 0
