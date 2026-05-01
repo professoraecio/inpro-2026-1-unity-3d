@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public Transform[] slimeWayPoints;
     public float slimeDistanceToAttack = 2.3f;
     public float slimeAlertTime = 2f;
+    public float slimeAttackDelay = 1f;
     void Start()
     {
         

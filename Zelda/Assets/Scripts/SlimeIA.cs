@@ -10,6 +10,7 @@ public class SlimeIA : MonoBehaviour
     private int idWayPoint;
     private bool isWalk;
     private bool isPlayerVisible;
+    private bool isAttack;
 
     private Animator anim;
     public int HP = 3;
@@ -38,6 +39,15 @@ public class SlimeIA : MonoBehaviour
             isWalk = false;
         anim.SetBool("isWalk",isWalk);
         anim.SetBool("isAlert",isAlert);
+    }
+
+    void Attack()
+    {
+        if(isAttack == false)
+        {
+            isAttack = true;
+            anim.SetTrigger("Attack");
+        }
     }
 
     IEnumerator Died()
@@ -85,6 +95,8 @@ public class SlimeIA : MonoBehaviour
             case enemyState.FOLLOW:
                 destination = _gm.player.position;
                 agent.destination = destination;
+                if(agent.remainingDistance <= agent.stoppingDistance)
+                    Attack();
             break;
             case enemyState.FURY:
                 destination = _gm.player.position;
@@ -118,9 +130,10 @@ public class SlimeIA : MonoBehaviour
                 //agent.stoppingDistance = _gm.slimeDistanceToAttack;
             break;
             case enemyState.FOLLOW:
-            agent.stoppingDistance = _gm.slimeDistanceToAttack;
+                isAttack = true;
+                agent.stoppingDistance = _gm.slimeDistanceToAttack;
                 StartCoroutine("FOLLOW");
-                //StartCoroutine("ATTACK");
+                StartCoroutine("ATTACK");
             break;
             case enemyState.FURY:
                 destination = transform.position;
@@ -163,7 +176,17 @@ public class SlimeIA : MonoBehaviour
         else
             StayStill(10);
     }
+    IEnumerator ATTACK()
+    {
+        yield return new WaitForSeconds(_gm.slimeAttackDelay);
+        isAttack = false;
+    }
     #endregion
+
+    void AttackIsDone()
+    {
+        StartCoroutine("ATTACK");
+    }
 
     private void OnTriggerEnter(Collider other)
     {
