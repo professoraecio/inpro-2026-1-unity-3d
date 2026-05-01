@@ -9,6 +9,7 @@ public class SlimeIA : MonoBehaviour
     private Vector3 destination;
     private int idWayPoint;
     private bool isWalk;
+    private bool isPlayerVisible;
 
     private Animator anim;
     public int HP = 3;
@@ -73,6 +74,8 @@ public class SlimeIA : MonoBehaviour
                 StartCoroutine("IDLE");
             break;
             case enemyState.ALERT:
+                destination = _gm.player.position;
+                agent.destination = destination;
             break;
             case enemyState.EXPLORE:
             break;
@@ -80,6 +83,8 @@ public class SlimeIA : MonoBehaviour
                 agent.stoppingDistance = 0;
             break;
             case enemyState.FOLLOW:
+                destination = _gm.player.position;
+                agent.destination = destination;
             break;
             case enemyState.FURY:
                 destination = _gm.player.position;
@@ -110,10 +115,12 @@ public class SlimeIA : MonoBehaviour
                 destination = _gm.slimeWayPoints[idWayPoint].position;
                 agent.destination = destination;
                 StartCoroutine("PATROL");
+                //agent.stoppingDistance = _gm.slimeDistanceToAttack;
             break;
             case enemyState.FOLLOW:
+            agent.stoppingDistance = _gm.slimeDistanceToAttack;
                 StartCoroutine("FOLLOW");
-                StartCoroutine("ATTACK");
+                //StartCoroutine("ATTACK");
             break;
             case enemyState.FURY:
                 destination = transform.position;
@@ -148,6 +155,14 @@ public class SlimeIA : MonoBehaviour
         yield return new WaitUntil(() => agent.remainingDistance <= 0);
         StayStill(30);
     }
+    IEnumerator ALERT()
+    {
+        yield return new WaitForSeconds(_gm.slimeAlertTime);
+        if(isPlayerVisible)
+            ChangeState(enemyState.FOLLOW);
+        else
+            StayStill(10);
+    }
     #endregion
 
     private void OnTriggerEnter(Collider other)
@@ -162,6 +177,16 @@ public class SlimeIA : MonoBehaviour
         if(state == enemyState.PATROL)
             patrol = true;
         if(player && (idle || patrol))
+        {
+            isPlayerVisible = true;
             ChangeState(enemyState.ALERT);
+        }
+            
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+            isPlayerVisible = false;
     }
 }
