@@ -922,7 +922,10 @@ MonoBehaviour:
         m_Data: 48084
       m_ExpandedIDs:
       - m_Data: -1338
+      - m_Data: 48070
+      - m_Data: 48084
       - m_Data: 48134
+      - m_Data: 48336
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -940,7 +943,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1585,9 +1588,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 13.48933, y: -25.131443, z: 16.161583}
+    m_Target: {x: 16.170061, y: -22.65951, z: 13.002075}
     speed: 2
-    m_Value: {x: 13.48933, y: -25.131443, z: 16.161583}
+    m_Value: {x: 16.170061, y: -22.65951, z: 13.002075}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1637,9 +1640,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.28527248, y: -0.6583676, z: 0.298411, w: -0.62938267}
   m_Size:
-    m_Target: 18.647495
+    m_Target: 15.510792
     speed: 2
-    m_Value: 18.647495
+    m_Value: 15.510792
   m_Ortho:
     m_Target: 0
     speed: 2
